@@ -1,4 +1,4 @@
-# Doctor App Voice (Clinvoice)
+# Doctor App Voice (Clin Voice)
 
 End-to-end voice-to-EMR app. A doctor records a consultation, the audio is transcribed and diarized live, then SOAP notes / medical reports / FHIR bundles are generated — all powered by **OpenAI** (`whisper-1` for speech-to-text, `gpt-4.1` for the LLM passes).
 
@@ -163,7 +163,7 @@ From this directory:
 ```bash
 git init
 git add .
-git commit -m "Initial commit: Doctor App Voice (Clinvoice AI) on OpenAI"
+git commit -m "Initial commit: Doctor App Voice (Clin Voice) on OpenAI"
 git branch -M main
 git remote add origin https://github.com/indusnet-ai/Clinvoice.git
 git push -u origin main

@@ -96,7 +96,7 @@ const SignUp = () => {
                 className={`w-full rounded-xl border ${
                   formik.touched.name && formik.errors.name ? "border-red-300 focus:ring-red-100" : "border-slate-200 focus:border-indigo-500 focus:ring-indigo-100"
                 } py-3 pl-11 pr-4 text-sm text-slate-800 placeholder-slate-400 outline-none focus:ring-4 transition-all duration-200`}
-                placeholder="Dr. Ashwin Kumar"
+                placeholder="Dr. Clinvoice"
               />
             </div>
             {formik.touched.name && formik.errors.name && (

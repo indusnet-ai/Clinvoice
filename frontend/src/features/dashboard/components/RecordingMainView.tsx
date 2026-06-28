@@ -1,5 +1,5 @@
 import React from "react";
-import AshwinAiImg from "@/assets/imgs/ClinVoice_robo.png";
+import ClinvoiceAiImg from "@/assets/imgs/ClinVoice_robo.png";
 import { VoiceWaveAnimation } from "@/app/component";
 import AiNotes from "./AiNotes";
 import { ProcessingView } from "./ProcessingView";
@@ -60,7 +60,7 @@ export const RecordingMainView: React.FC<Props> = ({
 
       {!effectiveHasTranscript && recordingState !== "result" && recordingState !== "idle" && (
         <div className="flex items-center justify-start w-full gap-3 mb-4">
-          <img src={AshwinAiImg} alt="ClinVoice AI" className="h-10 w-10" />
+          <img src={ClinvoiceAiImg} alt="ClinVoice AI" className="h-10 w-10" />
           <h1 className="text-[#01030F] text-[20px] font-semibold">ClinVoice AI</h1>
         </div>
       )}
@@ -69,21 +69,21 @@ export const RecordingMainView: React.FC<Props> = ({
         {!opd_id && recordingState === "idle" && (
           <div className="flex flex-col items-center">
             <h1 className="text-[32px] font-semibold text-center">{t("consultation.hereIam")}</h1>
-            <img src={AshwinAiImg} className="mt-10" />
+            <img src={ClinvoiceAiImg} className="mt-10" />
           </div>
         )}
 
         {opd_id && !currentOpd && recordingState === "idle" && (
           <div className="flex flex-col items-center">
             <h1 className="text-[32px] font-semibold text-center">{t("consultation.hereIam")}</h1>
-            <img src={AshwinAiImg} className="mt-10" />
+            <img src={ClinvoiceAiImg} className="mt-10" />
           </div>
         )}
 
         {opd_id && currentOpd && !effectiveHasTranscript && !isCompletedOpd && recordingState === "idle" && (
           <div className="flex flex-col items-center">
             <h1 className="text-[32px] font-semibold text-center">{t("consultation.hereIam")}</h1>
-            <img src={AshwinAiImg} className="mt-10" />
+            <img src={ClinvoiceAiImg} className="mt-10" />
           </div>
         )}
 
