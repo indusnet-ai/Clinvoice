@@ -1,4 +1,4 @@
-# Doctor App Voice (ASHWIN AI)
+# Doctor App Voice (Clinvoice)
 
 End-to-end voice-to-EMR app. A doctor records a consultation, the audio is transcribed and diarized live, then SOAP notes / medical reports / FHIR bundles are generated — all powered by **OpenAI** (`whisper-1` for speech-to-text, `gpt-4.1` for the LLM passes).
 
