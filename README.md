@@ -35,20 +35,20 @@ sudo systemctl start postgresql
 ## 2. Create the database
 
 ```bash
-psql postgres -c "CREATE USER ashwin WITH PASSWORD 'ashwin';" \
-              -c "CREATE DATABASE ashwin_db OWNER ashwin;" \
-              -c "GRANT ALL PRIVILEGES ON DATABASE ashwin_db TO ashwin;"
+psql postgres -c "CREATE USER clinvoice WITH PASSWORD '';" \
+              -c "CREATE DATABASE Clinvoice_db OWNER Clinvoice;" \
+              -c "GRANT ALL PRIVILEGES ON DATABASE Clinvoice_db TO Clinvoice;"
 ```
 
 ## 3. Create the tables (single SQL file)
 
 ```bash
-psql postgresql://ashwin:ashwin@localhost:5432/ashwin_db -f migration.sql
+psql postgresql://Clinvoice:Clinvoice@localhost:5432/Clinvoice_db -f migration.sql
 ```
 
 Verify:
 ```bash
-psql postgresql://ashwin:ashwin@localhost:5432/ashwin_db -c '\dt'
+psql postgresql://Clinvoice:Clinvoice@localhost:5432/Clinvoice_db -c '\dt'
 ```
 You should see ~25 tables.
 
@@ -119,14 +119,14 @@ Open <http://localhost:5173/auth/signup>. Create an account — the signup endpo
 | service tag | env var | what it talks to |
 | --- | --- | --- |
 | `backend` | `VITE_BACKEND_URL` | Clinic endpoints (auth + hospital + doctor + patient + OPD + slots + case-sheet). JWT Bearer. |
-| `ashwin` | `VITE_ASHWIN_AI_URL` | AI engine (`/upload_audio`, `/transcript`, `/SOAP_notes`, `/v1/medical_report`, `/v1.1/dental_medical_report`). Uses `x-api-key`. |
+| `Clinvoice` | `VITE_Clinvoice_AI_URL` | AI engine (`/upload_audio`, `/transcript`, `/SOAP_notes`, `/v1/medical_report`, `/v1.1/dental_medical_report`). Uses `x-api-key`. |
 | `abha`   | `VITE_ABHA_URL`    | `/abha_state_code`, `/abha_district_code` for state/district pickers. |
 
 ### Deleting cached AI outputs
 
 The backend caches each AI generation per `transcript_id`. If you change the prompt, drop the cached rows to force regeneration:
 ```bash
-psql postgresql://ashwin:ashwin@localhost:5432/ashwin_db <<SQL
+psql postgresql://Clinvoice:Clinvoice@localhost:5432/Clinvoice_db <<SQL
 DELETE FROM medical_reports_v1;
 DELETE FROM soap_notes_v1;
 SQL
@@ -146,7 +146,7 @@ To give a teammate a working copy:
 2. They install Postgres locally (Step 1 above) and create the database (Step 2).
 3. They run the migration:
    ```bash
-   psql postgresql://ashwin:ashwin@localhost:5432/ashwin_db -f migration.sql
+   psql postgresql://Clinvoice:Clinvoice@localhost:5432/Clinvoice_db -f migration.sql
    ```
 4. They copy `.env.example` files and add **their own** OpenAI key:
    * `backend/.env.example` → `backend/.env` (set `OPENAI_API_KEY`)
@@ -163,7 +163,7 @@ From this directory:
 ```bash
 git init
 git add .
-git commit -m "Initial commit: Doctor App Voice (ASHWIN AI) on OpenAI"
+git commit -m "Initial commit: Doctor App Voice (Clinvoice AI) on OpenAI"
 git branch -M main
 git remote add origin https://github.com/indusnet-ai/Clinvoice.git
 git push -u origin main
