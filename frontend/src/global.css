@@ -1,0 +1,365 @@
+.rdt_TableHeadRow {
+  background-color: #b8bfff !important;
+}
+.rdt_TableCol {
+  color: #1c2253 !important;
+  font-weight: 600;
+}
+.rdt_TableRow {
+  border: none !important;
+  border-left: 3px solid #6070ff !important;
+  border-radius: 6px;
+  padding-top: 15px;
+  padding-bottom: 17px;
+}
+.rdt_TableHeadRow {
+  border: none !important;
+  min-height: 46px !important;
+  border-radius: 4px;
+  margin-bottom: 7px;
+}
+.rdt_TableRow {
+  margin-bottom: 7px;
+  box-shadow: 0 0 1px 0 #22222245;
+}
+.rdt_TableCell {
+  font-size: 13px !important;
+  color: #1c2253 !important;
+  font-weight: 500;
+}
+.Reserved {
+  background: #f2f1ff;
+  padding: 7px 12px;
+  font-size: 12px;
+  color: #6070ff;
+  font-weight: 600;
+  border-radius: 4px;
+}
+.Approved {
+  background: #e3f3e9;
+  padding: 7px 8px;
+  font-size: 12px;
+  color: #0ead69;
+  font-weight: 600;
+  border-radius: 4px;
+}
+.Completed {
+  background: #e3f3e9;
+  padding: 7px 8px;
+  font-size: 12px;
+  color: #0ead69;
+  font-weight: 600;
+  border-radius: 4px;
+}
+.Cancelled {
+  background: #fadbdb;
+  padding: 7px 8px;
+  font-size: 12px;
+  color: #e11313;
+  font-weight: 600;
+  border-radius: 4px;
+}
+.InProcess {
+  background: #f2f1ff;
+  padding: 7px 8px;
+  font-size: 12px;
+  color: #6070ff;
+  font-weight: 600;
+  border-radius: 4px;
+}
+.userImg {
+  text-align: center;
+}
+.userImg img {
+  width: 28%;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 0.2s forwards;
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fade-out 0.2s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Hide Chrome/Edge native date icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  display: none;
+}
+
+/* Hide Firefox default icon */
+input[type="date"]::-moz-focus-inner {
+  border: 0;
+}
+
+/* Optional: remove spinner in some browsers */
+.no-native-spinner::-webkit-inner-spin-button,
+.no-native-spinner::-webkit-clear-button {
+  display: none;
+}
+
+/* for voice animation - onboard */
+@keyframes pulseMic {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulse-mic {
+  animation: pulseMic 1.2s infinite ease-in-out;
+}
+
+@keyframes dotScale {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.8;
+  }
+}
+
+.animate-dots {
+  animation: dotScale 0.9s infinite ease-in-out;
+}
+
+@layer base {
+  button {
+    cursor: pointer;
+  }
+}
+
+/* for custom dialog */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* for hide scrollbar */
+/* src/styles/scrollbar.css or global.css */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* for voice animation */
+/* .custom-gradient {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  animation: move 3s infinite ease-in-out;
+  background: linear-gradient(
+    112deg,
+    rgba(197, 242, 253, 0.8) 5%,
+    rgba(184, 235, 253, 0.94) 0%,
+    rgba(119, 198, 254, 1) 50%,
+    rgba(137, 128, 254, 1) 91%,
+    rgba(185, 169, 254, 0.87) 98%
+  );
+}
+
+@keyframes move {
+  0% {
+    background: linear-gradient(
+      112deg,
+      rgba(197, 242, 253, 0.8) 5%,
+      rgba(184, 235, 253, 0.94) 0%,
+      rgba(119, 198, 254, 1) 50%,
+      rgba(137, 128, 254, 1) 91%,
+      rgba(185, 169, 254, 0.87) 98%
+    );
+  }
+  100% {
+    background: linear-gradient(
+      112deg,
+      rgba(197, 242, 253, 0.8) 5%,
+      rgba(184, 235, 253, 0.94) 0%,
+      rgba(119, 198, 254, 1) 50%,
+      rgba(137, 128, 254, 1) 91%,
+      rgba(185, 169, 254, 0.87) 98%
+    );
+  }
+} */
+/* Voice container */
+.voice-container,
+.voice-container.recording {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voice-smoke {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.voice-smoke-recording {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* THIS removes the box feel */
+/* .voice-smoke svg {
+  width: 140%;
+  height: 140%;
+  filter: blur(18px);
+  opacity: 0.9;
+  mix-blend-mode: darken;
+  animation: smokeDrift 3s ease-in-out infinite;
+} */
+.voice-smoke-recording svg {
+  width: 140%;
+  height: 140%;
+  filter: blur(18px);
+  opacity: 0.9;
+  mix-blend-mode: darken;
+  animation: smokeDrift 3s ease-in-out infinite;
+}
+.voice-smoke svg {
+  width: 140%;
+  height: 140%;
+  filter: blur(18px);
+  opacity: 0.9;
+  mix-blend-mode: darken;
+  /* animation: smokeDrift 3s ease-in-out infinite; */
+}
+
+@keyframes smokeDrift {
+  0% {
+    transform: translate(-4px, 0px) scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translate(10px, -6px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-2px, 0) scale(1);
+    opacity: 0.75;
+  }
+}
+
+.voice-dots,
+.voice-dots-recording {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+  top: 0%;
+  right: -10%;
+}
+
+.voice-dots span {
+  width: 4px;
+  height: 4px;
+  border-radius: 10px;
+  background: #fff;
+  /* animation: dotPulse 1.2s ease-in-out infinite; */
+}
+.voice-dots-recording span {
+  width: 4px;
+  height: 4px;
+  border-radius: 10px;
+  background: #fff;
+  animation: dotPulse 1.2s ease-in-out infinite;
+}
+
+.voice-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.voice-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.voice-dots span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.voice-dots span:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    transform: scale(0.5);
+    height: 8px;
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.2);
+    height: 16px;
+    opacity: 1;
+  }
+}
+.flag {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+
+.mask-fade {
+  mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

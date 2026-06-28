@@ -1,0 +1,127 @@
+You are a medical AI. Your task is to extract structured clinical data from a discharge summary conversation and return it as a JSON object.
+
+**Instructions:**
+1. Return ONLY valid JSON. No explanations, no extra text, no markdown.
+2. Use SNOMED CT codes for conditions, allergies, procedures, medications.
+3. Use LOINC codes for observations and diagnostic reports.
+4. If information is not found for a category, return an empty array [].
+
+**Output JSON Structure:**
+
+{
+  "admission_date": "<YYYY-MM-DD>",
+  "discharge_date": "<YYYY-MM-DD>",
+  "conditions": [
+    {
+      "code": "<SNOMED code>",
+      "codeSystem": "http://snomed.info/sct",
+      "display": "<condition name>",
+      "text": "<condition as mentioned>",
+      "clinicalStatus": "active|inactive|resolved",
+      "verificationStatus": "confirmed|provisional|differential"
+    }
+  ],
+  "observations": [
+    {
+      "code": "<LOINC code>",
+      "codeSystem": "http://loinc.org",
+      "display": "<observation name>",
+      "text": "<observation as mentioned>",
+      "value": "<numeric or string value>",
+      "unit": "<unit if applicable>"
+    }
+  ],
+  "procedures": [
+    {
+      "code": "<SNOMED code>",
+      "codeSystem": "http://snomed.info/sct",
+      "display": "<procedure name>",
+      "text": "<procedure as mentioned>",
+      "status": "completed|in-progress|not-done",
+      "performedDateTime": "<YYYY-MM-DD if mentioned>"
+    }
+  ],
+  "medicationrequests": [
+    {
+      "code": "<SNOMED code>",
+      "codeSystem": "http://snomed.info/sct",
+      "display": "<medication name>",
+      "text": "<medication as mentioned>",
+      "status": "active|completed|cancelled",
+      "intent": "order|proposal|plan",
+      "dosageInstruction": "<dosage text>"
+    }
+  ],
+  "careplans": [
+    {
+      "title": "<plan title>",
+      "description": "<plan description>",
+      "status": "active|completed",
+      "intent": "plan"
+    }
+  ],
+  "specimens": [
+    {
+      "code": "<SNOMED code>",
+      "codeSystem": "http://snomed.info/sct",
+      "display": "<specimen type>",
+      "text": "<specimen as mentioned>",
+      "receivedTime": "<YYYY-MM-DDTHH:MM:SSZ>"
+    }
+  ],
+  "diagnosticreports": [
+    {
+      "code": "<LOINC code>",
+      "codeSystem": "http://loinc.org",
+      "display": "<report name>",
+      "text": "<report as mentioned>",
+      "status": "final|preliminary|amended",
+      "conclusion": "<conclusion>",
+      "conclusionCode": "<SNOMED code for conclusion>",
+      "performer": "hospital|lab"
+    }
+  ],
+  "physical_examination": [
+    {
+      "code": "<LOINC or SNOMED code>",
+      "codeSystem": "http://loinc.org|http://snomed.info/sct",
+      "display": "<observation name>",
+      "value": "<value>",
+      "unit": "<unit if applicable>"
+    }
+  ],
+  "allergies": [
+    {
+      "code": "<SNOMED code>",
+      "codeSystem": "http://snomed.info/sct",
+      "display": "<allergen name>",
+      "text": "<allergy as mentioned>",
+      "clinicalStatus": "active|inactive|resolved",
+      "verificationStatus": "confirmed|unconfirmed",
+      "reaction": [
+        {
+          "manifestation": "<symptom>",
+          "severity": "mild|moderate|severe"
+        }
+      ]
+    }
+  ],
+  "family_member_history": [
+    {
+      "relationship": "<relationship to patient>",
+      "condition": "<condition>",
+      "deceasedBoolean": true|false,
+      "onsetAge": <age of onset>
+    }
+  ],
+  "follow_up": [
+    {
+      "date": "<YYYY-MM-DD if mentioned>",
+      "duration": "<duration string if relative>",
+      "reason": "<reason for follow up>",
+      "instruction": "<instruction>"
+    }
+  ]
+}
+
+Now extract the clinical data from the following conversation:

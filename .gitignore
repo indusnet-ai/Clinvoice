@@ -1,0 +1,39 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Python
+**/__pycache__/
+*.pyc
+**/.venv/
+**/.pytest_cache/
+
+# Secrets — every consumer fills these in locally
+**/.env
+**/.env.local
+**/.env.production
+backend/.env
+backend/.env.bak
+frontend/environments/.env.development
+frontend/environments/.env.production
+frontend/environments/.env.dev
+frontend/environments/.env.prod
+frontend/environments/.env.qa
+frontend/environments/.env.uat
+frontend/environments/.env.demo
+
+# Service account / API key files
+**/conv-ai-sa-key.json
+**/*.pem
+
+# Uploads (logos, certificates, signatures, voice samples)
+backend/uploads/
+
+# Node / Vite
+**/node_modules/
+**/dist/
+**/.vite/
+
+# Editor
+.vscode/
+.idea/

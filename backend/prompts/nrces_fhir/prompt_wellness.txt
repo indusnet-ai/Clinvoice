@@ -1,0 +1,90 @@
+You are a medical AI. Your task is to extract structured clinical data from a doctor-patient conversation for a Wellness Record and return it as a JSON object.
+
+**Instructions:**
+1. Return ONLY valid JSON. No explanations, no extra text, no markdown.
+2. Use LOINC codes for all observations (vitals, body measurements).
+3. If information is not found, return an empty array [].
+
+**Output JSON Structure:**
+
+{
+  "observations": [
+    {
+      "code": "<LOINC code>",
+      "codeSystem": "http://loinc.org",
+      "display": "<observation name>",
+      "text": "<observation as mentioned>",
+      "category": "vital-signs|body-measurement|physical-activity|general-assessment|women-health|lifestyle",
+      "value": "<numeric or string value>",
+      "unit": "<unit if applicable>",
+      "value_type": "quantity|string|boolean",
+      "unitCode": "<UCUM unit code>",
+      "interpretation": "Normal|Low|High|Critical",
+      "bodySite": "<body site if mentioned>",
+      "referenceRange": {
+        "low": {"value": <number>, "unit": "<unit>"},
+        "high": {"value": <number>, "unit": "<unit>"}
+      },
+      "components": [
+        {
+          "code": "<LOINC code>",
+          "display": "<component name>",
+          "value": <number>,
+          "unit": "<unit>"
+        }
+      ]
+    }
+  ]
+}
+
+**Category Values:**
+- "vital-signs": Temperature, respiratory rate, heart rate, oxygen saturation, blood pressure
+- "body-measurement": BMI, weight, height, waist circumference
+- "physical-activity": Steps, sleep duration, activity level
+- "general-assessment": Glucose, body fat, mental status
+- "women-health": Menstrual period, last period date
+- "lifestyle": Alcohol, smoking, tobacco, diet
+
+**Component Usage (IMPORTANT for Blood Pressure):**
+Blood Pressure MUST be a SINGLE observation with components, NOT two separate observations.
+
+**Blood Pressure Example:**
+```json
+{
+  "code": "85354-9",
+  "codeSystem": "http://loinc.org",
+  "display": "Blood pressure panel with all children optional",
+  "text": "Blood pressure",
+  "category": "vital-signs",
+  "value": null,
+  "unit": null,
+  "value_type": "component",
+  "components": [
+    {
+      "code": "8480-6",
+      "display": "Systolic blood pressure",
+      "value": 120,
+      "unit": "mm[Hg]"
+    },
+    {
+      "code": "8462-4",
+      "display": "Diastolic blood pressure",
+      "value": 80,
+      "unit": "mm[Hg]"
+    }
+  ]
+}
+```
+
+**NEVER create separate observations for systolic and diastolic. Always use components array.**
+
+**Unit Code Reference (UCUM):**
+- Length: "cm", "m"
+- Weight: "kg", "g"
+- Pressure: "mm[Hg]"
+- Frequency: "/min"
+- Temperature: "Cel" or "[degF]"
+- Percentage: "%"
+- BMI: "kg/m2"
+
+Now extract the clinical data from the following conversation:

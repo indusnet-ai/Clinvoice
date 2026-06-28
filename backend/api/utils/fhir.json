@@ -1,0 +1,411 @@
+{
+  "resourceType": "Bundle",
+  "id": "",
+  "identifier": {
+    "system": "",
+    "value": ""
+  },
+  "type": "document",
+  "timestamp": "",
+  "entry": [
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "",
+        "meta": {
+          "versionId": "",
+          "lastUpdated": "",
+          "profile": [
+            ""
+          ]
+        },
+        "language": "",
+        "identifier": {
+          "system": "",
+          "value": ""
+        },
+        "status": "",
+        "type": {
+          "coding": [
+            {
+              "system": "",
+              "code": "",
+              "display": ""
+            }
+          ],
+          "text": ""
+        },
+        "encounter": {
+          "reference": ""
+        },
+        "subject": {
+          "reference": "",
+          "display": ""
+        },
+        "date": "",
+        "author": [
+          {
+            "reference": "",
+            "display": ""
+          }
+        ],
+        "title": "",
+        "custodian": {
+          "reference": "",
+          "display": ""
+        },
+        "section": [
+          {
+            "title": "",
+            "code": {
+              "coding": [
+                {
+                  "system": "",
+                  "code": "",
+                  "display": ""
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "",
+                "display": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "",
+        "meta": {
+          "versionId": "",
+          "lastUpdated": "",
+          "profile": [
+            ""
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "",
+                  "code": "",
+                  "display": ""
+                }
+              ]
+            },
+            "system": "",
+            "value": ""
+          }
+        ],
+        "name": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "",
+        "meta": {
+          "profile": [
+            ""
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "",
+                  "code": "",
+                  "display": ""
+                }
+              ]
+            },
+            "system": "",
+            "value": ""
+          }
+        ],
+        "name": "",
+        "telecom": [
+          {
+            "system": "",
+            "value": "",
+            "use": ""
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "",
+        "meta": {
+          "versionId": "",
+          "lastUpdated": "",
+          "profile": [
+            ""
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "",
+                  "code": "",
+                  "display": ""
+                }
+              ]
+            },
+            "system": "",
+            "value": ""
+          }
+        ],
+        "name": [
+          {
+            "text": ""
+          }
+        ],
+        "telecom": [
+          {
+            "system": "",
+            "value": "",
+            "use": ""
+          }
+        ],
+        "gender": "",
+        "birthDate": ""
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "",
+        "status": "",
+        "class": {
+          "system": "",
+          "code": "",
+          "display": ""
+        },
+        "subject": {
+          "reference": ""
+        }
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "",
+        "meta": {
+          "profile": [
+            ""
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "",
+              "code": "",
+              "display": ""
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "",
+              "display": ""
+            }
+          ],
+          "text": ""
+        },
+        "subject": {
+          "reference": "",
+          "display": ""
+        },
+        "recordedDate": ""
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "",
+        "meta": {
+          "profile": [
+            ""
+          ]
+        },
+        "status": "",
+        "serviceCategory": [
+          {
+            "coding": [
+              {
+                "system": "",
+                "code": "",
+                "display": ""
+              }
+            ]
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "",
+                "code": "",
+                "display": ""
+              }
+            ]
+          }
+        ],
+        "appointmentType": {
+          "coding": [
+            {
+              "system": "",
+              "code": "",
+              "display": ""
+            }
+          ]
+        },
+        "reasonReference": [
+          {
+            "reference": "",
+            "display": ""
+          }
+        ],
+        "description": "",
+        "start": "",
+        "end": "",
+        "participant": [
+          {
+            "actor": {
+              "reference": "",
+              "display": ""
+            },
+            "status": ""
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "",
+              "display": ""
+            }
+          ],
+          "text": ""
+        },
+        "subject": {
+          "reference": ""
+        },
+        "effectiveDateTime": "",
+        "valueQuantity": {
+          "value": 0,
+          "unit": "",
+          "system": "http://unitsofmeasure.org",
+          "code": ""
+        }
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "",
+              "display": ""
+            }
+          ],
+          "text": ""
+        },
+        "subject": {
+          "reference": ""
+        },
+        "effectiveDateTime": "",
+        "valueString": ""
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "",
+        "status": "",
+        "intent": "",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "",
+              "code": "",
+              "display": ""
+            }
+          ],
+          "text": ""
+        },
+        "subject": {
+          "reference": ""
+        },
+        "authoredOn": "",
+        "requester": {
+          "reference": ""
+        },
+        "dosageInstruction": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    }
+  ]
+}

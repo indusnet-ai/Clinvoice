@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Dashboard",
+    "translationKey": "sidebar.dashboard",
+    "route": "/appointment",
+    "children": [],
+    "icon": "DashboardIcon"
+  },
+  {
+    "name": "Patient",
+    "translationKey": "sidebar.patient",
+    "route": "/patientlist",
+    "children": [],
+    "icon": "PatientIcon"
+  },
+  {
+    "name": "Settings",
+    "translationKey": "sidebar.settings",
+    "route": "",
+    "children": [
+      {
+        "name": "Hospital Info",
+        "translationKey": "sidebar.hospitalInfo",
+        "route": "/settings/hospital-info",
+        "children": [],
+        "icon": "HospitalIcon"
+      },
+      {
+        "name": "Doctor Info",
+        "translationKey": "sidebar.doctorInfo",
+        "route": "/settings/doctor-info",
+        "children": [],
+        "icon": "DoctorIcon"
+      },
+      {
+        "name": "Voice & Signature",
+        "translationKey": "sidebar.voiceSignature",
+        "route": "/settings/voice-address",
+        "children": [],
+        "icon": "VoiceSignatureIcon"
+      },
+      {
+        "name": "Slots",
+        "translationKey": "sidebar.slots",
+        "route": "/settings/slots",
+        "children": [],
+        "icon": "SlotsIcon"
+      }
+    ],
+    "icon": "SettingsIcon"
+  }
+]
