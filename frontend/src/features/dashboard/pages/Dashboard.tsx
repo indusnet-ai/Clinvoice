@@ -134,7 +134,7 @@ export default function Dashboard() {
   }, [location.hash]);
 
   const rowData = OPDdata?.data || [];
-  const totalCount = OPDdata?.count ?? 0;
+  const totalCount = OPDdata?.total ?? 0;
 
   // Debug logging for OPD data to verify counts
   useEffect(() => {
@@ -251,7 +251,7 @@ export default function Dashboard() {
 
               if (!date) return;
 
-              const formatted = formatDate(date);
+              const formatted = formatDate(date.actual);
 
               setFilters((prev) => ({
                 ...prev,
